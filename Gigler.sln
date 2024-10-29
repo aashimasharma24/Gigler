@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigler.API", "Gigler.API\Gigler.API.csproj", "{70E4A5FF-33A2-4EAB-B31D-32ABC9E467B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigler.Core", "Gigler.Core\Gigler.Core.csproj", "{8A14E01E-9E16-4ECD-A01B-3A2EE9BA2690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigler.Manager", "Gigler.Manager\Gigler.Manager.csproj", "{EBEB0B0A-077D-4CC3-907A-677BE6494F0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{70E4A5FF-33A2-4EAB-B31D-32ABC9E467B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E4A5FF-33A2-4EAB-B31D-32ABC9E467B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E4A5FF-33A2-4EAB-B31D-32ABC9E467B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A14E01E-9E16-4ECD-A01B-3A2EE9BA2690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A14E01E-9E16-4ECD-A01B-3A2EE9BA2690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A14E01E-9E16-4ECD-A01B-3A2EE9BA2690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A14E01E-9E16-4ECD-A01B-3A2EE9BA2690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBEB0B0A-077D-4CC3-907A-677BE6494F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBEB0B0A-077D-4CC3-907A-677BE6494F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBEB0B0A-077D-4CC3-907A-677BE6494F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBEB0B0A-077D-4CC3-907A-677BE6494F0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

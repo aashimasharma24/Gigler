@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
+    <ProjectReference Include="..\Gigler.Core\Gigler.Core.csproj" />
   </ItemGroup>
 
 </Project>
