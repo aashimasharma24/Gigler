@@ -20,35 +20,35 @@ namespace Gigler.Manager
 
         public List<QuestionDTO> GetAll()
         {
-            var list = new List<QuestionDTO>();
+            var listQuestionDto = new List<QuestionDTO>();
 
-            var ids = _giglerDBContext.Questions
+            var listQuestions = _giglerDBContext.Questions
                 .OrderBy(r => Guid.NewGuid())
                 .Take(5)
                 .Select(x => new { x.Id })
                 .ToList()
                 .Select(x => x.Id);
 
-            var titles = _giglerDBContext.QuestionTitles
-                .Where(r => ids.Contains(r.QuestionId))
+            var listQuestionTitles = _giglerDBContext.QuestionTitles
+                .Where(r => listQuestions.Contains(r.QuestionId))
                 .OrderBy(r => Guid.NewGuid())
                 .Select(x => new { x.Title, x.QuestionId })
                 .ToArray();
 
 
-            foreach (var id in ids)
+            foreach (var question in listQuestions)
             {
-                var title = titles.Where(x => x.QuestionId == id).FirstOrDefault();
+                var objQuestionTitle = listQuestionTitles.Where(x => x.QuestionId == question).FirstOrDefault();
 
-                list.Add(new QuestionDTO { id = id.ToString(), Title = title.Title });
+                listQuestionDto.Add(new QuestionDTO { id = question.ToString(), title = objQuestionTitle.Title });
             }
 
-            return list;
+            return listQuestionDto;
         }
 
         public List<QuestionDTO> GetAllv2()
         {
-            var ids = _giglerDBContext.Questions
+            var listQuestions = _giglerDBContext.Questions
                 .Join(
                     _giglerDBContext.QuestionTitles,
                     question => question.Id,
@@ -63,7 +63,7 @@ namespace Gigler.Manager
                 .Take(5)
                 .ToList();
 
-            return ids.Select(x => new QuestionDTO() { id=x.id, Title=x.title}).ToList();
+            return listQuestions.Select(x => new QuestionDTO() { id=x.id, title=x.title}).ToList();
         }
     }
 }

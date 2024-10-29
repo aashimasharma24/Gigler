@@ -9,6 +9,6 @@ namespace Gigler.Core.DTOs
     public class QuestionDTO
     {
         public string id { get; set; }
-        public string Title { get; set; }
+        public string title { get; set; }
     }
 }
