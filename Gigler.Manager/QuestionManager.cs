@@ -40,10 +40,30 @@ namespace Gigler.Manager
             {
                 var title = titles.Where(x => x.QuestionId == id).FirstOrDefault();
 
-                list.Add(new QuestionDTO { Guid = id.ToString(), Title = title.Title });
+                list.Add(new QuestionDTO { id = id.ToString(), Title = title.Title });
             }
 
             return list;
+        }
+
+        public List<QuestionDTO> GetAllv2()
+        {
+            var ids = _giglerDBContext.Questions
+                .Join(
+                    _giglerDBContext.QuestionTitles,
+                    question => question.Id,
+                    questionTitle => questionTitle.QuestionId,
+                    (question, questionTitle) => new
+                    {
+                        id = question.Guid,
+                        title = questionTitle.Title,
+                    }
+                )
+                .OrderBy(r => Guid.NewGuid())
+                .Take(5)
+                .ToList();
+
+            return ids.Select(x => new QuestionDTO() { id=x.id, Title=x.title}).ToList();
         }
     }
 }
