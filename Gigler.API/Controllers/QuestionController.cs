@@ -1,4 +1,5 @@
 using Gigler.Core.DataObjects;
+using Gigler.Core.DTOs;
 using Gigler.Manager;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace Gigler.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Question> Get(QuestionManager questionManager)
+        public List<QuestionDTO> Get(QuestionManager questionManager)
         {
             return questionManager.GetAll();
         }
