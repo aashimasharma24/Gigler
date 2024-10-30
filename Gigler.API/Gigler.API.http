@@ -1,6 +1,6 @@
 @Gigler.API_HostAddress = http://localhost:5023
 
-GET {{Gigler.API_HostAddress}}/weatherforecast/
+GET {{Gigler.API_HostAddress}}/question/
 Accept: application/json
 
 ###
