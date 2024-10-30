@@ -1,11 +1,4 @@
-﻿using Gigler.Core.DataObjects;
-using Gigler.Core.DTOs;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Gigler.Core.DTOs;
 
 namespace Gigler.Manager
 {
@@ -18,13 +11,13 @@ namespace Gigler.Manager
             _giglerDBContext = giglerDBContext;
         }
 
-        public List<QuestionDTO> GetAll()
+        public List<QuestionDTO> GetRandom(int count = 5)
         {
             var listQuestionDto = new List<QuestionDTO>();
 
             var listQuestions = _giglerDBContext.Questions
                 .OrderBy(r => Guid.NewGuid())
-                .Take(5)
+                .Take(count)
                 .Select(x => new { x.Id })
                 .ToList()
                 .Select(x => x.Id);
@@ -46,7 +39,7 @@ namespace Gigler.Manager
             return listQuestionDto;
         }
 
-        public List<QuestionDTO> GetAllv2()
+        public List<QuestionDTO> GetRandomV2(int count = 5)
         {
             var listQuestions = _giglerDBContext.Questions
                 .Join(
@@ -60,7 +53,7 @@ namespace Gigler.Manager
                     }
                 )
                 .OrderBy(r => Guid.NewGuid())
-                .Take(5)
+                .Take(count)
                 .ToList();
 
             return listQuestions.Select(x => new QuestionDTO() { id=x.id, title=x.title}).ToList();

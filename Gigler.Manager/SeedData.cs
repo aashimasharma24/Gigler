@@ -12,7 +12,7 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<GiglerDBContext>>()))
         {
-            // Look for any movies.
+
             if (context.Questions.Any())
             {
                 return;   // DB has been seeded

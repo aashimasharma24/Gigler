@@ -19,7 +19,7 @@ namespace Gigler.API.Controllers
         [HttpGet]
         public List<QuestionDTO> Get(QuestionManager questionManager)
         {
-            return questionManager.GetAllv2();
+            return questionManager.GetRandomV2();
         }
     }
 }
