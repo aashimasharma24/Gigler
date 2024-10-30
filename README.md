@@ -7,3 +7,15 @@
 - Unit tests
 - SQL query optimisation
 - Question types
+
+## Setup
+- .Net 8
+- MSSQL
+
+## Config
+
+Update connection string in `Gigler.API\appsettings.json` to your DB.
+
+## API
+
+1. GET /question
